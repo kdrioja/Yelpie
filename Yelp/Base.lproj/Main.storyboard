@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vc8-xQ-em2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vc8-xQ-em2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,9 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wDO-pv-WYq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wDO-pv-WYq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="businessCell" rowHeight="122" id="Ny6-ph-a4l" customClass="BusinessCell" customModule="Yelp" customModuleProvider="target">
@@ -66,7 +66,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="469 Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUL-NS-zdw">
-                                                    <rect key="frame" x="185" y="42.5" width="78" height="16"/>
+                                                    <rect key="frame" x="185" y="42.5" width="155" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.53367875647668395" green="0.53367875647668395" blue="0.53367875647668395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -77,7 +77,7 @@
                                                     <color key="textColor" red="0.53367875647668395" green="0.53367875647668395" blue="0.53367875647668395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vo2-I9-deh">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="$$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vo2-I9-deh">
                                                     <rect key="frame" x="348" y="34" width="17" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.53367875647668395" green="0.53367875647668395" blue="0.53367875647668395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -87,6 +87,8 @@
                                             <constraints>
                                                 <constraint firstItem="zpn-mc-MC5" firstAttribute="leading" secondItem="IwB-QY-ruY" secondAttribute="trailing" constant="8" id="2bf-7m-Bmw"/>
                                                 <constraint firstItem="gxZ-CF-T3r" firstAttribute="leading" secondItem="oht-mc-9ml" secondAttribute="trailing" constant="8" id="2vW-lf-Sba"/>
+                                                <constraint firstItem="Vo2-I9-deh" firstAttribute="leading" secondItem="bUL-NS-zdw" secondAttribute="trailing" constant="8" id="5f7-o7-XVz"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="D0f-rz-1oR" secondAttribute="trailing" constant="139" id="8Em-Cw-6WG"/>
                                                 <constraint firstItem="D0f-rz-1oR" firstAttribute="top" secondItem="zpn-mc-MC5" secondAttribute="bottom" constant="4" id="9D4-OU-nwK"/>
                                                 <constraint firstItem="IwB-QY-ruY" firstAttribute="leading" secondItem="xIG-gf-BOW" secondAttribute="leadingMargin" constant="8" id="9JU-L3-QEJ"/>
                                                 <constraint firstItem="bUL-NS-zdw" firstAttribute="centerY" secondItem="0h9-Rs-PVC" secondAttribute="centerY" id="C27-Hz-8K4"/>
@@ -122,6 +124,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wDO-pv-WYq" firstAttribute="leading" secondItem="XhR-oz-92f" secondAttribute="leading" id="NgY-6T-Zms"/>
+                            <constraint firstAttribute="trailing" secondItem="wDO-pv-WYq" secondAttribute="trailing" id="gUj-FV-LKe"/>
+                            <constraint firstItem="VBY-gq-v8E" firstAttribute="top" secondItem="wDO-pv-WYq" secondAttribute="bottom" id="idX-2t-wVh"/>
+                            <constraint firstItem="wDO-pv-WYq" firstAttribute="top" secondItem="XhR-oz-92f" secondAttribute="top" id="xKz-wG-N2E"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Yelpie" id="W4A-SJ-R9p"/>
                     <connections>

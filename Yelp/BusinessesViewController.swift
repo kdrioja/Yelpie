@@ -8,11 +8,19 @@
 
 import UIKit
 
-class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
     
-    var businesses: [Business]!
+    func updateSearchResults(for searchController: UISearchController) {
+        if searchController.searchBar.text != nil {
+            
+        }
+    }
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var businesses: [Business]!
+    var searchController: UISearchController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,6 +28,26 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension //for the actual cells
         tableView.estimatedRowHeight = 120 //for the scroll
+        
+        
+        
+        // Initializing with searchResultsController set to nil means that
+        // searchController will use this view controller to display the search results
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        
+        // If we are using this same view controller to present the results
+        // dimming it out wouldn't make sense. Should probably only set
+        // this to yes if using another controller to display the search results.
+        searchController.dimsBackgroundDuringPresentation = false
+        
+        searchController.searchBar.sizeToFit()
+        tableView.tableHeaderView = searchController.searchBar
+        
+        // Sets this view controller as presenting view controller for the search interface
+        definesPresentationContext = true
+        
+        
         
         Business.searchWithTerm(term: "Thai", completion: { (businesses: [Business]?, error: Error?) -> Void in
             
