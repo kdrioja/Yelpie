@@ -18,6 +18,8 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = UITableViewAutomaticDimension //for the actual cells
+        tableView.estimatedRowHeight = 120 //for the scroll
         
         Business.searchWithTerm(term: "Thai", completion: { (businesses: [Business]?, error: Error?) -> Void in
             
@@ -25,12 +27,14 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
             
                 self.tableView.reloadData()
             
+                /*
                 if let businesses = businesses {
                     for business in businesses {
                         print(business.name!)
                         print(business.address!)
                     }
                 }
+                */
             
             }
         )
